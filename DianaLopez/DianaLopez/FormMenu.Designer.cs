@@ -54,28 +54,28 @@
             // formulario1ToolStripMenuItem
             // 
             this.formulario1ToolStripMenuItem.Name = "formulario1ToolStripMenuItem";
-            this.formulario1ToolStripMenuItem.Size = new System.Drawing.Size(112, 23);
+            this.formulario1ToolStripMenuItem.Size = new System.Drawing.Size(124, 23);
             this.formulario1ToolStripMenuItem.Text = "Formulario 1";
             this.formulario1ToolStripMenuItem.Click += new System.EventHandler(this.formulario1ToolStripMenuItem_Click);
             // 
             // formulario2ToolStripMenuItem
             // 
             this.formulario2ToolStripMenuItem.Name = "formulario2ToolStripMenuItem";
-            this.formulario2ToolStripMenuItem.Size = new System.Drawing.Size(112, 23);
+            this.formulario2ToolStripMenuItem.Size = new System.Drawing.Size(124, 23);
             this.formulario2ToolStripMenuItem.Text = "Formulario 2";
             this.formulario2ToolStripMenuItem.Click += new System.EventHandler(this.formulario2ToolStripMenuItem_Click);
             // 
             // formulario3ToolStripMenuItem
             // 
             this.formulario3ToolStripMenuItem.Name = "formulario3ToolStripMenuItem";
-            this.formulario3ToolStripMenuItem.Size = new System.Drawing.Size(112, 23);
+            this.formulario3ToolStripMenuItem.Size = new System.Drawing.Size(124, 23);
             this.formulario3ToolStripMenuItem.Text = "Formulario 3";
             this.formulario3ToolStripMenuItem.Click += new System.EventHandler(this.formulario3ToolStripMenuItem_Click);
             // 
             // sALIRToolStripMenuItem
             // 
             this.sALIRToolStripMenuItem.Name = "sALIRToolStripMenuItem";
-            this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(65, 23);
+            this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(71, 23);
             this.sALIRToolStripMenuItem.Text = "SALIR";
             this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
             // 

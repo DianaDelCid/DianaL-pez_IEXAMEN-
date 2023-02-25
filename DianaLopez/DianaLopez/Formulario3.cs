@@ -12,50 +12,58 @@ namespace DianaLopez
 
         private void ArregloButton_Click(object sender, EventArgs e)
         {
-            Numeros();
+            //PARA LIMPIAR EL LISTBOX DESPUES DE CADA CLICK
+            listBox1.Items.Clear();
+            Numeros(); //LLAMADA DE LA FUNCION NUMEROS
         }
 
         public void Numeros()
         {
-            //Vectores
-            //Inicializamos vector 
-            int[] vector = new int[101]; //almacena 100 valores 
+            //DECLARACION DE VECTOR E INSTANCIACION 
+            int[] vector = new int[101]; //almacena 101 valores 
+
+            //VARIABLES 
             string nombre = "Diana";
             String apellido = "López";
-            String completo = "Diana López";
 
+
+            //RECORRE EL VECTOR HASTA LLEGAR A 101
             for (int i = 1; i < vector.Length; i++)
             {
+                //ASIGNACION DE VALORES AL VECTOR
                 vector[i] = i;
-                //listBox1.Items.Add(vector[i]); //Agregamos al listBox los valores en cada una de las posiciones
 
-                //listBox1.Items.Add(vector[i]);
+                //MOSTRAR VALORES EN EL LISTBOX
+                listBox1.Items.Add(vector[i]);
 
-
+                //CONDICIÓN SIMPLE SI VALOR DEL INDICE (I) ES MULTIPLO DE 3
                 if (vector[i] % 3 == 0)
                 {
-                    //String[] vector = Convert.ToString(vector);
-                    //listBox1.Items.Add("Diana");
-                    listBox1.Items.Add(nombre);
-                    listBox1.Items.Remove(listBox1.Items);
+
+                    listBox1.Items.Add(nombre); //Agrega el nombre en este indice en el listbox
+                    listBox1.Items.Remove(vector[i]); //Borra el valor del indice
+
                 }
+                //CONDICIÓN SIMPLE SI VALOR DEL INDICE (I) ES MULTIPLO DE 5
                 if (vector[i] % 5 == 0)
                 {
-                    listBox1.Items.Add("López");
+                    listBox1.Items.Add(apellido); //Agrega el nombre en este indice en el listbox
+                    listBox1.Items.Remove(vector[i]);  //Borra el valor del indice
                 }
                 if ((vector[i] % 3 == 0) && (vector[i] % 5 == 0))
                 {
-                    listBox1.Items.Add("Diana López");
+
+                    listBox1.Items.Add(nombre + " " + apellido); //Agrega el nombre en este indice en el listbox
+                    listBox1.Items.Remove(vector[i]);  //Borra el valor del indice
                 }
-                else
-                {
-                    listBox1.Items.Add(vector[i]);
-                }
-
-
-
 
             }
+
+        }
+
+        private void SalirButton_Click(object sender, EventArgs e)
+        {
+            Close(); //metodo para que cierre el formulario
         }
     }
 }

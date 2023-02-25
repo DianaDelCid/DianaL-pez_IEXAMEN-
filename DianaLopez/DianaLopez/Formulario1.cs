@@ -12,64 +12,59 @@ namespace DianaLopez
 
         private void button1_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             //variables
             decimal capital = 200000;
             double inter = 0.015;
-            decimal interes = Convert.ToDecimal(inter);
-            decimal tiempo = 30;
+            decimal interes = Convert.ToDecimal(inter); //Convercion del interes
+            decimal tiempo = 1;
 
+            //LLAMAMOS LA FUNCION JUNTO CON LOS PARAMETROS DADOS
             CalculoInteres(capital, interes, tiempo);
         }
 
+        //FUNCION DE CALCULO DEL INTERES CON PARAMETROS 
         private decimal CalculoInteres(decimal capi, decimal i, decimal tiem)
         {
-            tiem = tiem / 360;
-            decimal CalInteres;
-            CalInteres = capi * i * tiem;
-            string convertir = Convert.ToString(CalInteres);
-            decimal acum = CalInteres;
-            decimal imes = 0;
-
-
-            for (int fila = 0; fila < 12; fila++)
+            for (int fila = 0; fila < 13; fila++) //RECORRER FILAS
             {
-                for (int columna = 0; columna < 2; columna++)
+                decimal CalInteres;
+                CalInteres = capi * i * fila;
+                string convertir = Convert.ToString(CalInteres);
+                decimal acum = CalInteres;
+                //acum = CalInteres + acum;
+                string acumula = Convert.ToString(acum);
+
+                for (int columna = 0; columna < 2; columna++) //RECORRER COLUMNAS
                 {
-                    for (int j = 0; j < 1; j++)
-                    {
-                        acum = acum + CalInteres;
-
-                        string acumula = Convert.ToString(acum);
-
-                        String[,] matriz = new String[12, 2]
-                            {
-                            {"Enero", convertir},
-                            { "Febrero", "Interes: "+acumula},
-                            {"Marzo", acumula},
-                            {"Abril", acumula},
-                            {"Mayo", acumula},
-                            {"Junio", acumula},
-                            {"Jilio", acumula},
-                            {"Agosto", acumula},
-                            {"Septiembre", acumula},
-                            {"Octubre", acumula},
-                            {"Noviembre", acumula},
-                            {"Diembre", acumula}
-                            };
-
-                        //matriz[fila, columna];
-                        listBox1.Items.Add(matriz[fila, columna]);
-                    }
-
+                    //Declaración de una matriz
+                    String[,] matriz = new String[13, 2]
+                        {   //Llenar matriz con los resultados obtenidos de cada mes
+                            {"Interés de Cada mes"," MES              INTERES"},
+                            {"ENERO      Lps."+CalInteres, ""},
+                            {"FEBRERO    Lps."+CalInteres, ""},
+                            {"MARZO      Lps."+CalInteres, ""},
+                            {"ABRIL      Lps."+CalInteres, ""},
+                            {"MAYO       Lps."+CalInteres, ""},
+                            {"JUNIO      Lps."+CalInteres, ""},
+                            {"JULIO      Lps."+CalInteres, ""},
+                            {"AGOSTO     Lps."+CalInteres, ""},
+                            {"SEPTIEMBRE Lps."+CalInteres, ""},
+                            {"OCTUBRE    Lps."+CalInteres, ""},
+                            {"NOVIEMBRE  Lps."+CalInteres, ""},
+                            {"DICIEMBRE  Lps."+CalInteres, ""}
+                        };
+                    //LLENAR EL LISTBOX CON LA MATRIZ
+                    listBox1.Items.Add(matriz[fila, columna]);
                 }
-            }
 
-            return 2 - 2;
+            }
+            return tiem;
         }
 
         private void SalirButton_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(); //metodo cierra el formulario
         }
 
     }

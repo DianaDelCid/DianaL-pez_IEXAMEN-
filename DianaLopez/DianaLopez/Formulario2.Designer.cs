@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,6 +50,8 @@
             this.TotalLabel = new System.Windows.Forms.Label();
             this.BorrarButton = new System.Windows.Forms.Button();
             this.SalirButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(139, 43);
+            this.label2.Location = new System.Drawing.Point(136, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(215, 20);
             this.label2.TabIndex = 1;
@@ -75,11 +78,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(180, 89);
+            this.label3.Location = new System.Drawing.Point(169, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.Size = new System.Drawing.Size(85, 16);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre";
+            this.label3.Text = "Descripción";
             // 
             // Nombre1TextBox
             // 
@@ -206,12 +209,12 @@
             // CalcularTotalButton
             // 
             this.CalcularTotalButton.BackColor = System.Drawing.Color.White;
-            this.CalcularTotalButton.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CalcularTotalButton.Location = new System.Drawing.Point(224, 204);
+            this.CalcularTotalButton.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalcularTotalButton.Location = new System.Drawing.Point(111, 209);
             this.CalcularTotalButton.Name = "CalcularTotalButton";
             this.CalcularTotalButton.Size = new System.Drawing.Size(75, 27);
             this.CalcularTotalButton.TabIndex = 17;
-            this.CalcularTotalButton.Text = "Total";
+            this.CalcularTotalButton.Text = "Calcular";
             this.CalcularTotalButton.UseVisualStyleBackColor = false;
             this.CalcularTotalButton.Click += new System.EventHandler(this.CalcularTotalButton_ClickAsync);
             // 
@@ -219,7 +222,7 @@
             // 
             this.TotalLabel.AutoSize = true;
             this.TotalLabel.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalLabel.Location = new System.Drawing.Point(357, 210);
+            this.TotalLabel.Location = new System.Drawing.Point(238, 209);
             this.TotalLabel.Name = "TotalLabel";
             this.TotalLabel.Size = new System.Drawing.Size(42, 22);
             this.TotalLabel.TabIndex = 18;
@@ -229,7 +232,7 @@
             // 
             this.BorrarButton.BackColor = System.Drawing.Color.White;
             this.BorrarButton.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BorrarButton.Location = new System.Drawing.Point(224, 237);
+            this.BorrarButton.Location = new System.Drawing.Point(111, 242);
             this.BorrarButton.Name = "BorrarButton";
             this.BorrarButton.Size = new System.Drawing.Size(75, 29);
             this.BorrarButton.TabIndex = 19;
@@ -239,7 +242,9 @@
             // 
             // SalirButton
             // 
-            this.SalirButton.Location = new System.Drawing.Point(399, 262);
+            this.SalirButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.SalirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalirButton.Location = new System.Drawing.Point(399, 267);
             this.SalirButton.Name = "SalirButton";
             this.SalirButton.Size = new System.Drawing.Size(75, 23);
             this.SalirButton.TabIndex = 20;
@@ -247,11 +252,17 @@
             this.SalirButton.UseVisualStyleBackColor = true;
             this.SalirButton.Click += new System.EventHandler(this.SalirButton_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Formulario2
             // 
+            this.AcceptButton = this.CalcularTotalButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(193)))), ((int)(((byte)(220)))));
+            this.CancelButton = this.SalirButton;
             this.ClientSize = new System.Drawing.Size(486, 297);
             this.ControlBox = false;
             this.Controls.Add(this.SalirButton);
@@ -278,6 +289,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Formulario2";
             this.Text = "Calculo Descuento";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +318,6 @@
         private System.Windows.Forms.Label TotalLabel;
         private System.Windows.Forms.Button BorrarButton;
         private System.Windows.Forms.Button SalirButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
